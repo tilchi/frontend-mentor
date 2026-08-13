@@ -16,46 +16,11 @@
   <!-- style code -->
   <link rel="stylesheet" href="style.css">
 
-
-  <!-- <style>
-    .attribution {
-      font-size: 0.6875rem;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style> -->
 </head>
 
 <body>
 
-
-
-
-  <!-- Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset -->
-
-
-  <main>
+  <main class="main">
     <h1 class="heading">SPLI<br>TTER</h1>
 
     <section id="tip-calculator-app" class="tip-calculator-app">
@@ -66,22 +31,31 @@
 
           <div class="tip-calculator-app__bill">
             <h2 class="header-textHeading">Bill</h2>
-            <input type="text" placeholder="0" name="bill">
+            <div class="tip-calculator-app__input-wrapper">
+              <img src="images/icon-dollar.svg" alt="">
+              <input type="text" placeholder="0" name="bill" class="inputs">
+            </div>
 
           </div>
           <div class="tip-calculator-app__tips">
+            <h2 class="header-textHeading">Select Tip % </h2>
+            <div class="tip-calculator-app__tip-boxs">
+              <div class="tip-calculator-app__tip">5%</div>
+              <div class="tip-calculator-app__tip">10%</div>
+              <div class="tip-calculator-app__tip">15%</div>
+              <div class="tip-calculator-app__tip">25%</div>
+              <div class="tip-calculator-app__tip">50%</div>
+              <div class="tip-calculator-app__tip" contenteditable="true">Custom</div>
+            </div>
 
-            <div class="tip-calculator-app__tip">5%</div>
-            <div class="tip-calculator-app__tip">10%</div>
-            <div class="tip-calculator-app__tip">15%</div>
-            <div class="tip-calculator-app__tip">25%</div>
-            <div class="tip-calculator-app__tip">50%</div>
-
-            <div class="tip-calculator-app__tip">Custom</div>
           </div>
 
           <div class="tip-calculator-app__people">
-            <input type="text">
+            <h2 class="header-textHeading">Number of People</h2>
+            <div class="tip-calculator-app__input-wrapper">
+              <img src="images/icon-person.svg" alt="">
+              <input type="text" placeholder="0" name="people" class="inputs">
+            </div>
           </div>
 
         </div>
@@ -89,16 +63,25 @@
 
         <div class="tip-calculator-app__result">
           <div class="tip-calculator-app__result-header">
-            <h2>Tip Amount</h2>
-            <p>/ person</p>
-            <p class="tip-calculator-app__result-price">4.27</p>
+            <div class="tip-calculator-app__result-header-info">
+              <h2 class="tip-calculator-app__result-heading">Tip Amount </h2>
+              <p>/ person</p>
+            </div>
+            <div class="tip-calculator-app__result-header-price">
+              <p class="tip-calculator-app__result-price">&dollar;4.27</p>
+            </div>
           </div>
           <div class="tip-calculator-app__result-footer">
-            <h2>Total</h2>
-            <p>/ person</p>
-            <p class="tip-calculator-app__result-price">32.79</p>
+            <div class="tip-calculator-app__result-footer-info">
+              <h2>Total</h2>
+              <p>/ person</p>
+            </div>
+            <div class="tip-calculator-app__result-footer-price">
+              <p class="tip-calculator-app__result-price">&dollar;32.79</p>
+            </div>
+
           </div>
-          <button class="tip-calculator-app__reset">Reset</button>
+          <button class="tip-calculator-app__reset">RESET</button>
         </div>
       </div>
     </section>
@@ -106,7 +89,7 @@
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Fatih Keleş</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/tilchi">Fatih Keles</a>.
   </footer>
 </body>
 

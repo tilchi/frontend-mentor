@@ -4,21 +4,47 @@
  ======================================== */
 
 
- :root{
+:root {
     --clr-primary: hsl(172, 67%, 45%);
     --clr-neutral-900: hsl(183, 100%, 15%);
     --clr-neutral-500: hsl(186, 14%, 43%);
     --clr-neutral-400: hsl(184, 14%, 56%);
     --clr-neutral-200: hsl(185, 41%, 84%);
+    --clr-neutral-100: #d9e7eb;
     --clr-neutral-50: hsl(189, 47%, 97%);
-
+    --clr-hover: rgb(18 92 98);
+    ;
     --ff-primary: "Space Mono", sans-serif;
 
     --fw-700: 700;
- }
+}
 
 
- /* =========================================
+.inputs {
+    width: 95%;
+    height: 5rem;
+
+    font-size: 2.7rem;
+    font-weight: var(--fw-700);
+
+    background-color: var(--clr-neutral-100);
+
+    border-radius: 0.5rem;
+
+    padding: 2rem;
+    text-align: right;
+
+}
+
+
+.header-textHeading {
+
+    color: var(--clr-neutral-500);
+    font-size: 1.7rem;
+    font-weight: var(--fw-700);
+}
+
+/* =========================================
     RESET CSS
 
  ======================================== */
@@ -31,7 +57,7 @@
 }
 
 body {
-    
+
     margin: 0;
     padding: 0;
 
@@ -39,25 +65,334 @@ body {
 
 }
 
- /* =========================================
+p,
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+
+    margin: 0;
+}
+
+button,
+input,
+input:focus-visible {
+    border: none;
+    outline: none;
+}
+
+
+/* =========================================
     BASE CSS
 
  ======================================== */
 
 html {
-    
+
     font-size: 62.5%;
 
 }
 
 
-body{
-    
+body {
+
     background-color: var(--clr-neutral-200);
-    
+
     font-size: 2.4rem;
 
     line-height: 1.5;
 
     -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================
+    MAIN CSS
+
+ ======================================== */
+
+
+.main {
+
+    min-height: 100vh;
+
+}
+
+.heading {
+
+    font-size: 3rem;
+
+    color: var(--clr-neutral-500);
+
+    text-align: center;
+
+    letter-spacing: 1rem;
+
+    margin-top: 3rem;
+
+
+}
+
+.tip-calculator-app {
+
+    background-color: var(--clr-neutral-50);
+
+    height: 100%;
+
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+
+    padding-inline: 3.6rem;
+    padding-bottom: 2rem;
+
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+
+
+
+
+}
+
+
+.tip-calculator-app__input-wrapper img {
+
+    width: 1.5rem;
+    position: absolute;
+    left: 10%;
+    transform: translateY(60%);
+
+}
+
+
+.tip-calculator-app__container {
+
+    min-height: 100%;
+
+}
+
+
+.tip-calculator-app__calculation {
+
+    padding-top: 3rem;
+
+}
+
+
+.tip-calculator-app__tips {
+
+    margin-block: 3rem;
+}
+
+
+.tip-calculator-app__tip-boxs {
+    margin-top: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2rem;
+}
+
+
+
+.tip-calculator-app__tip {
+
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-50);
+
+    text-align: center;
+
+    padding: 0.5rem;
+
+    border-radius: 0.6rem;
+}
+
+
+.tip-calculator-app__tip:hover {
+
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral-900);
+}
+
+.tip-calculator-app__tip:last-child {
+
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-neutral-500);
+}
+
+
+.tip-calculator-app__result {
+    position: relative;
+    background-color: var(--clr-neutral-900);
+
+
+    margin-block: 3rem;
+
+    border-radius: 3rem;
+
+
+
+    padding: 3rem;
+
+
+}
+
+
+.tip-calculator-app__result-header {
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-block: 3rem;
+}
+
+.tip-calculator-app__result-header-info {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-calculator-app__result-footer {
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-block: 3rem;
+}
+
+.tip-calculator-app__result-footer-info {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-calculator-app__result-header-price,
+.tip-calculator-app__result-footer-price {
+
+    color: var(--clr-primary);
+    font-size: 4rem;
+}
+
+.tip-calculator-app__result-header-info h2,
+.tip-calculator-app__result-footer-info h2 {
+
+    color: var(--clr-neutral-50);
+    font-size: 2.2rem;
+}
+
+.tip-calculator-app__result-header-info p,
+.tip-calculator-app__result-footer-info p {
+
+    color: var(--clr-neutral-500);
+    font-size: 1.5rem;
+}
+
+
+
+.tip-calculator-app__reset {
+
+    background-color: var(--clr-hover);
+    color: var(--clr-neutral-900);
+
+    font-weight: var(--fw-700);
+    font-size: 2.7rem;
+
+    padding: 1.5rem;
+
+    width: 100%;
+    height: 6rem;
+
+    border-radius: 0.5rem;
+}
+
+.tip-calculator-app__reset:hover {
+    background-color: var(--clr-primary);
+}
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+    background-color: var(--clr-primary);
+    padding: 1.5rem;
+    font-size: 1.6rem;
+}
+
+footer a {
+    color: rgb(109, 19, 19);
+}
+
+
+
+/* Responsive : Desktop, tablet */
+
+
+@media (min-width: 768px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .tip-calculator-app {
+
+        max-width: 60%;
+    }
+
+    .tip-calculator-app__container {
+
+        display: flex;
+        justify-content: space-evenly;
+
+        gap: 10rem;
+
+    }
+
+    .tip-calculator-app__tip-boxs {
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tip-calculator-app__input-wrapper img {
+
+        left: 24%;
+    }
+
+    .tip-calculator-app__result {
+        width: 60%;
+        min-height: 100%;
+
+    }
+
+
+
+    .tip-calculator-app__reset {
+
+    margin-top: 8rem;
+
+    font-size: 2.3rem;
+
+    padding: 1rem;
+
+
+}
+
+
+.tip-calculator-app__bill{
+    margin-top: 3rem;
+}
+.tip-calculator-app__tips{
+
+    margin-top: 8rem;
+
+
+
+}
 }
