@@ -1102,6 +1102,18 @@ p {
 
 }
 
+.attribution{
+    margin-top: 8rem;
+    text-align: center;
+    word-spacing: 0.5rem;
+    font-size: 2rem;
+}
+
+.attribution > a{
+
+    color: red;
+}
+
 
 
 
