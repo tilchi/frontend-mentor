@@ -15,7 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <!-- style code -->
   <link rel="stylesheet" href="style.css">
-
+  <!-- js code -->
+  <script src="app.js" defer></script>
 </head>
 
 <body>
@@ -32,20 +33,30 @@
           <div class="tip-calculator-app__bill">
             <h2 class="header-textHeading">Bill</h2>
             <div class="tip-calculator-app__input-wrapper">
-              <img src="images/icon-dollar.svg" alt="">
-              <input type="text" placeholder="0" name="bill" class="inputs">
+              <img src="images/icon-dollar.svg" alt="" draggable="false">
+              <input type="number" inputmode="numeric" id="billInput" placeholder="0" name="bill" class="inputs">
             </div>
 
           </div>
           <div class="tip-calculator-app__tips">
             <h2 class="header-textHeading">Select Tip % </h2>
             <div class="tip-calculator-app__tip-boxs">
-              <div class="tip-calculator-app__tip">5%</div>
-              <div class="tip-calculator-app__tip">10%</div>
-              <div class="tip-calculator-app__tip">15%</div>
-              <div class="tip-calculator-app__tip">25%</div>
-              <div class="tip-calculator-app__tip">50%</div>
-              <div class="tip-calculator-app__tip" contenteditable="true">Custom</div>
+              <div class="tip-calculator-app__tip">
+                <button class="">5%</button>
+                </div>
+              <div class="tip-calculator-app__tip">
+                <button class="">10%</button>
+                </div>
+              <div class="tip-calculator-app__tip">
+                <button class="">15%</button>
+                </div>
+              <div class="tip-calculator-app__tip">
+                <button class="">25%</button>
+                </div>
+              <div class="tip-calculator-app__tip">
+                <button class="">50%</button>
+                </div>
+              <input type="number" id="customValue" class="tip-calculator-app__tip" placeholder="Custom">
             </div>
 
           </div>
@@ -53,8 +64,8 @@
           <div class="tip-calculator-app__people">
             <h2 class="header-textHeading">Number of People</h2>
             <div class="tip-calculator-app__input-wrapper">
-              <img src="images/icon-person.svg" alt="">
-              <input type="text" placeholder="0" name="people" class="inputs">
+              <img src="images/icon-person.svg" alt="" draggable="false">
+              <input type="number" inputmode="numeric" id="peopleInput" placeholder="0" name="people" class="inputs">
             </div>
           </div>
 
@@ -68,7 +79,7 @@
               <p>/ person</p>
             </div>
             <div class="tip-calculator-app__result-header-price">
-              <p class="tip-calculator-app__result-price">&dollar;4.27</p>
+              <p id="perPersonPrice" class="tip-calculator-app__result-price">&dollar;0.00</p>
             </div>
           </div>
           <div class="tip-calculator-app__result-footer">
@@ -77,11 +88,11 @@
               <p>/ person</p>
             </div>
             <div class="tip-calculator-app__result-footer-price">
-              <p class="tip-calculator-app__result-price">&dollar;32.79</p>
+              <p id="totalPrice" class="tip-calculator-app__result-price">&dollar;0.00</p>
             </div>
 
           </div>
-          <button class="tip-calculator-app__reset">RESET</button>
+          <button id="resetBtn" class="tip-calculator-app__reset">RESET</button>
         </div>
       </div>
     </section>

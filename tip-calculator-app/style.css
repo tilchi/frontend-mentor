@@ -81,6 +81,8 @@ input,
 input:focus-visible {
     border: none;
     outline: none;
+    margin: 0;
+    background-color: transparent;
 }
 
 
@@ -112,7 +114,15 @@ body {
     MAIN CSS
 
  ======================================== */
+.btn-active,
+.btn-active button{
+    background-color: var(--clr-primary) !important;
+    color: var(--clr-neutral-900) !important;
+}
 
+/* .active-2{
+    color: var(--clr-neutral-900) !important;
+} */
 
 .main {
 
@@ -204,15 +214,39 @@ body {
 
     text-align: center;
 
-    padding: 0.5rem;
+    padding: 1rem 2rem 1rem 2rem;
 
     border-radius: 0.6rem;
+
+
 }
 
+.tip-calculator-app__tip button {
+    font-size: 2.3rem;
+    font-weight: var(--fw-700);
+    color: var(--clr-neutral-50);
+}
+
+
+.tip-calculator-app__tip-boxs input {
+    width: 20rem;
+    font-size: 2rem;
+}
+
+.tip-calculator-app__tip-boxs input::placeholder {
+    font-size: 2.5rem;
+    font-weight: var(--fw-700);
+    font-family: "Space Mono", sans-serif;
+    ;
+}
 
 .tip-calculator-app__tip:hover {
 
     background-color: var(--clr-primary);
+
+}
+
+.tip-calculator-app__tip:hover button {
     color: var(--clr-neutral-900);
 }
 
@@ -320,6 +354,7 @@ footer {
     background-color: var(--clr-primary);
     padding: 1.5rem;
     font-size: 1.6rem;
+    text-align: center;
 }
 
 footer a {
@@ -362,7 +397,13 @@ footer a {
 
     .tip-calculator-app__input-wrapper img {
 
+        width: 1.2rem;
+        transform: translateY(87%);
         left: 24%;
+    }
+
+    .tip-calculator-app__tip-boxs input {
+        width: 15rem;
     }
 
     .tip-calculator-app__result {
@@ -375,24 +416,25 @@ footer a {
 
     .tip-calculator-app__reset {
 
-    margin-top: 8rem;
+        margin-top: 8rem;
 
-    font-size: 2.3rem;
+        font-size: 2.3rem;
 
-    padding: 1rem;
-
-
-}
+        padding: 1rem;
 
 
-.tip-calculator-app__bill{
-    margin-top: 3rem;
-}
-.tip-calculator-app__tips{
-
-    margin-top: 8rem;
+    }
 
 
+    .tip-calculator-app__bill {
+        margin-top: 3rem;
+    }
 
-}
+    .tip-calculator-app__tips {
+
+        margin-top: 8rem;
+
+
+
+    }
 }
