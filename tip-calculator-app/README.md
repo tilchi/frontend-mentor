@@ -13,7 +13,7 @@ This is my solution to the Tip Calculator App challenge on Frontend Mentor.
 
 ## Links
 
-- [Live Site :](fm-tip-calculatorapp.netlify.app)
+- [Live Site :](https://fm-tip-calculatorapp.netlify.app)
 - [Repository :](https://github.com/tilchi/frontend-mentor/tree/main/tip-calculator-app)
 
 ## Built with
