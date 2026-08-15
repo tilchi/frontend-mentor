@@ -39,8 +39,8 @@
             </div>
 
           </div>
+          <h2 class="header-textHeading">Select Tip % </h2>
           <div class="tip-calculator-app__tips">
-            <h2 class="header-textHeading">Select Tip % </h2>
             <div class="tip-calculator-app__tip-boxs">
               <div class="tip-calculator-app__tip">
                 <button class="">5%</button>
@@ -57,16 +57,22 @@
               <div class="tip-calculator-app__tip">
                 <button class="">50%</button>
                 </div>
-              <input type="number" id="customValue" class="tip-calculator-app__tip" placeholder="Custom">
+                <div class="tip-calculator-app__tip">
+                  <input type="number" id="customValue" class="tip-calculator-app__tip" placeholder="Custom">
+                </div>
             </div>
 
           </div>
 
           <div class="tip-calculator-app__people">
-            <h2 class="header-textHeading">Number of People</h2>
+            <div class="tip-calculator-app__people-header">
+              <h2 class="header-textHeading">Number of People</h2> 
+              <span id="zeroAlert">Can't be zero</span>
+            </div>
             <div class="tip-calculator-app__input-wrapper">
               <img class="peopleImageFix" src="images/icon-person.svg" alt="" draggable="false">
-              <input type="number" inputmode="numeric" id="peopleInput" placeholder="0" name="people" class="inputs">
+              <input type="number" inputmode="numeric" maxlength="3"
+              id="peopleInput" placeholder="0" name="people" class="inputs">
             </div>
           </div>
 

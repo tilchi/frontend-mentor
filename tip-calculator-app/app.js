@@ -42,7 +42,6 @@ function run() {
 function getBill() {
 
     const getBillValue = Number(bill.value.trim());
-
     return getBillValue;
 }
 
@@ -50,7 +49,6 @@ function getBill() {
 function selectedTipbox(box) {
 
     const getSelectedTip = Number(box.textContent.trim().replace("%", ""));
-
     selectedTip = getSelectedTip;
 }
 
@@ -90,7 +88,13 @@ function selectedTipCustom() {
 function getPeopleValue() {
 
     const getPeopleValue = Number(people.value.trim());
-
+    const zeroAlert = document.getElementById("zeroAlert")
+    if (people.value === "0") {
+        zeroAlert.classList.add("zeroAlert-active");
+        setTimeout(() => {
+            zeroAlert.classList.remove("zeroAlert-active");
+        }, 2000);
+    }
     return getPeopleValue;
 
 }
