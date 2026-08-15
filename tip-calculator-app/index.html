@@ -16,6 +16,7 @@
   <!-- style code -->
   <link rel="stylesheet" href="style.css">
   <!-- js code -->
+  <!-- <script src="app.js" defer></script> -->
   <script src="app.js" defer></script>
 </head>
 
@@ -64,7 +65,7 @@
           <div class="tip-calculator-app__people">
             <h2 class="header-textHeading">Number of People</h2>
             <div class="tip-calculator-app__input-wrapper">
-              <img src="images/icon-person.svg" alt="" draggable="false">
+              <img class="peopleImageFix" src="images/icon-person.svg" alt="" draggable="false">
               <input type="number" inputmode="numeric" id="peopleInput" placeholder="0" name="people" class="inputs">
             </div>
           </div>
@@ -79,7 +80,7 @@
               <p>/ person</p>
             </div>
             <div class="tip-calculator-app__result-header-price">
-              <p id="perPersonPrice" class="tip-calculator-app__result-price">&dollar;0.00</p>
+              <p id="tipPerPersonPrice" class="tip-calculator-app__result-price">&dollar;0.00</p>
             </div>
           </div>
           <div class="tip-calculator-app__result-footer">

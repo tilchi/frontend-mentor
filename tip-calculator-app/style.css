@@ -40,8 +40,11 @@
 .header-textHeading {
 
     color: var(--clr-neutral-500);
+
     font-size: 1.7rem;
+
     font-weight: var(--fw-700);
+
 }
 
 /* =========================================
@@ -115,7 +118,7 @@ body {
 
  ======================================== */
 .btn-active,
-.btn-active button{
+.btn-active button {
     background-color: var(--clr-primary) !important;
     color: var(--clr-neutral-900) !important;
 }
@@ -395,12 +398,19 @@ footer a {
         grid-template-columns: repeat(3, 1fr);
     }
 
+
     .tip-calculator-app__input-wrapper img {
 
         width: 1.2rem;
         transform: translateY(87%);
         left: 24%;
     }
+
+    /* .peopleImageFix {
+
+        transform: translateY(99%) !important;
+
+    } */
 
     .tip-calculator-app__tip-boxs input {
         width: 15rem;

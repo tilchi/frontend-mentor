@@ -4,138 +4,120 @@ const tipBoxs = document.querySelectorAll(
 );
 const tipCustomValue = document.getElementById("customValue");
 const people = document.getElementById("peopleInput");
-const perPersonPrice = document.getElementById("perPersonPrice");
+const tipPerPerson = document.getElementById("tipPerPersonPrice");
 const totalPrice = document.getElementById("totalPrice");
 const reset = document.getElementById("resetBtn");
 
 let selectedTip = 0;
 
-
 function run() {
 
-    // Bill
+    // get bill input value, event
     bill.addEventListener("input", updateCalculator);
-
-
-    // Tip boxes
+    // tip box active click, event
     tipBoxs.forEach(function (box) {
         box.addEventListener("click", function () {
-            handleBox(box);
-            tipBoxsAddClass(box);
+            selectedTipbox(box)
+            tipBoxsClassOpt(box);
             updateCalculator();
+
         });
     });
-
-
-    // Custom tip
+    // get tip box custom value, event
     tipCustomValue.addEventListener("input", function () {
-        customValue();
-        tipCustomAddClass();
+
+        selectedTipCustom();
+        tipCustomClassOpt();
         updateCalculator();
     });
 
-
-    // Number of people
+    // get people value, event
     people.addEventListener("input", updateCalculator);
 
+    // reset btn, event
 
-    // Reset
     reset.addEventListener("click", resetAll);
 }
 
+function getBill() {
 
-function billValue() {
+    const getBillValue = Number(bill.value.trim());
 
-    const billValue = Number(bill.value.trim());
-
-    return billValue;
+    return getBillValue;
 }
 
 
-function handleBox(box) {
+function selectedTipbox(box) {
 
-    const boxValue = Number(
-        box.textContent.replace("%", "").trim()
-    );
+    const getSelectedTip = Number(box.textContent.trim().replace("%", ""));
 
-    selectedTip = boxValue;
+    selectedTip = getSelectedTip;
 }
 
 
-function customValue() {
+function tipBoxsClassOpt(box) {
 
-    const customValue = Number(
-        tipCustomValue.value.trim()
-    );
+    tipBoxs.forEach(function (box) {
 
-    selectedTip = customValue;
+        box.classList.remove("btn-active")
+    });
+
+    tipCustomValue.classList.remove("btn-active")
+    box.classList.add("btn-active")
 }
 
 
-function peopleInput() {
+function tipCustomClassOpt(box) {
 
-    const peopleValue = Number(
-        people.value.trim()
-    );
+    tipBoxs.forEach(function (box) {
 
-    return peopleValue;
+        box.classList.remove("btn-active")
+    });
+
+    tipCustomValue.classList.add("btn-active");
+
+}
+
+function selectedTipCustom() {
+
+    const getTipCustomValue = Number(tipCustomValue.value.trim())
+
+    selectedTip = getTipCustomValue;
 }
 
 
-function calculator(billValue, selectedTip, peopleValue) {
 
-    if (billValue === 0 || peopleValue === 0) {
+function getPeopleValue() {
+
+    const getPeopleValue = Number(people.value.trim());
+
+    return getPeopleValue;
+
+}
+
+
+function calculator(getBillValue, selectedTip, getPeopleValue) {
+
+    if (getBillValue <= 0 || getPeopleValue <= 0) {
+        tipPerPerson.textContent = "$0.00";
+        totalPrice.textContent = "$0.00";
         return;
     }
 
-    const tipAmount = billValue * (selectedTip * 0.01);
+    const tipPerPersonResult = (getBillValue * (selectedTip * 0.01)) / getPeopleValue;
+    const totalPerPersonResult = (getBillValue + (getBillValue * (selectedTip * 0.01))) / getPeopleValue;
 
-    const tipPerPerson = tipAmount / peopleValue;
-
-    const totalPerPerson =
-        (billValue + tipAmount) / peopleValue;
-
-    perPersonPrice.textContent =
-        tipPerPerson.toFixed(2);
-
-    totalPrice.textContent =
-        totalPerPerson.toFixed(2);
+    tipPerPerson.textContent = "$" + tipPerPersonResult.toFixed(2);
+    totalPrice.textContent = "$" + totalPerPersonResult.toFixed(2);
 }
 
 
 function updateCalculator() {
 
-    const bill = billValue();
+    const bill = getBill();
+    const people = getPeopleValue();
 
-    const people = peopleInput();
-
-    calculator(
-        bill,
-        selectedTip,
-        people
-    );
-}
-
-
-function tipBoxsAddClass(box) {
-
-    tipBoxs.forEach(function (box) {
-        box.classList.remove("btn-active");
-    });
-
-    tipCustomValue.classList.remove("btn-active");
-
-    box.classList.add("btn-active");
-}
-
-
-function tipCustomAddClass() {
-
-    tipBoxs.forEach(function (box) {
-        box.classList.remove("btn-active");
-    });
-
-    tipCustomValue.classList.add("btn-active");
+    calculator(bill, selectedTip, people);
 }
 
 
@@ -143,22 +125,22 @@ function resetAll() {
 
     bill.value = "";
 
+    selectedTip = 0;
+
     tipCustomValue.value = "";
 
     people.value = "";
 
-    selectedTip = 0;
+    tipPerPerson.textContent = "$0.00";
 
-    perPersonPrice.textContent = "0.00";
-
-    totalPrice.textContent = "0.00";
-
+    totalPrice.textContent = "$0.00";
 
     tipBoxs.forEach(function (box) {
         box.classList.remove("btn-active");
     });
 
     tipCustomValue.classList.remove("btn-active");
+
 }
 
 
