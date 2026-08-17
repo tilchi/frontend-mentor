@@ -1,0 +1,396 @@
+/* =====================================
+   ROOT
+   ===================================== */
+
+:root {
+    --clr-neutral-900: hsl(0, 0%, 7%);
+    --clr-neutral-800: hsl(0, 0%, 15%);
+    --clr-neutral-500: hsl(240, 3%, 46%);
+    --clr-neutral-0: hsl(0, 0%, 100%);
+
+    --clr-red-500: hsl(354, 63%, 57%);
+    --clr-yellow-400: hsl(49, 85%, 70%);
+    --clr-green-500: hsl(140, 63%, 57%);
+
+    --ff-primary: "Sora", sans-serif;
+
+    --fw-400: 400;
+    --fw-600: 600;
+    --fw-700: 700;
+}
+
+
+/* =====================================
+   RESET
+   ===================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-0);
+    font-family: var(--ff-primary);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+button,
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =====================================
+   HEADER
+   ===================================== */
+
+.header__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem 0;
+}
+
+
+/* Changed: logo wrapper ve image ayrı class */
+.header__logo-image {
+    width: 2.7rem;
+}
+
+
+.header__personal-best {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+
+.header__personal-best-icon {
+    width: 1.6rem;
+}
+
+
+.header__personal-best-text {
+    color: var(--clr-neutral-500);
+    font-size: 1.5rem;
+    font-weight: var(--fw-400);
+}
+
+
+.header__personal-best-value {
+    color: var(--clr-neutral-0);
+}
+
+
+/* =====================================
+   RESULTS
+   ===================================== */
+
+.header__results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    margin-block: 3rem;
+
+    text-align: center;
+}
+
+
+.header__result {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Added: result kolonları arasındaki ayırıcılar */
+.header__result:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    top: 10%;
+    right: -1rem;
+
+    width: 1px;
+    height: 80%;
+
+    background-color: var(--clr-neutral-500);
+    opacity: 0.5;
+}
+
+
+.header__result-label {
+    padding-inline: 1rem;
+
+    color: var(--clr-neutral-500);
+    font-size: 1.6rem;
+    font-weight: var(--fw-400);
+}
+
+
+.header__result-value {
+    font-size: 1.8rem;
+    font-weight: var(--fw-600);
+}
+
+
+.header__result-value--wpm {
+    color: var(--clr-neutral-0);
+}
+
+
+.header__result-value--accuracy {
+    color: var(--clr-red-500);
+}
+
+
+.header__result-value--time {
+    color: var(--clr-yellow-400);
+}
+
+
+/* =====================================
+   TEST OPTIONS
+   ===================================== */
+
+.header__options {
+    position: relative;
+}
+
+
+/* Changed: pseudo-element artık options listesine bağlı */
+.header__options-list {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    padding-inline: 2rem;
+}
+
+
+.header__options-list::after {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+
+    top: 130%;
+    left: 5%;
+
+    width: 90%;
+    height: 1px;
+
+    background-color: var(--clr-neutral-500);
+    opacity: 0.8;
+}
+
+
+.header__options-item {
+    position: relative;
+
+    width: 50%;
+}
+
+
+.header__options-button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+
+    border: 1px solid var(--clr-neutral-500);
+    border-radius: 0.5rem;
+
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-0);
+
+    font-size: 1.5rem;
+}
+
+
+/* Changed: dropdown başlangıçta gizli */
+.header__dropdown {
+    display: none;
+
+    position: absolute;
+    z-index: 10;
+
+    top: calc(100% + 0.5rem);
+    left: 0;
+
+    width: 100%;
+
+    padding: 0.5rem;
+
+    border: 1px solid var(--clr-neutral-500);
+    border-radius: 0.5rem;
+
+    background-color: var(--clr-neutral-800);
+}
+
+
+.header__dropdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+
+.header__dropdown-button {
+    width: 100%;
+    padding: 0.7rem;
+
+    background: transparent;
+    color: var(--clr-neutral-0);
+
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+
+.header__dropdown-button:hover {
+    background-color: var(--clr-neutral-900);
+}
+
+
+/* =====================================
+   TYPING TEST
+   ===================================== */
+
+.typing-test-app {
+    position: relative;
+}
+
+
+.typing-test-app::after {
+    content: "";
+
+    position: absolute;
+    right: 8%;
+    bottom: 4%;
+
+    width: 85%;
+    height: 1px;
+
+    background-color: var(--clr-neutral-500);
+}
+
+
+.typing-test-app__container {
+    min-height: 65vh;
+
+    padding: 3rem 1.5rem;
+}
+
+
+/* Changed: passage artık h1 değil, normal content container */
+.typing-text {
+    font-size: 2.5rem;
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   RESTART BUTTON
+   ===================================== */
+
+.typing-test-app__restart {
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 3rem;
+}
+
+
+.typing-test-app__restart-button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    padding: 1rem 3.5rem;
+
+    border-radius: 0.8rem;
+
+    background-color: var(--clr-neutral-800);
+    color: var(--clr-neutral-0);
+
+    font-size: 1.5rem;
+    font-weight: var(--fw-400);
+}
+
+
+.typing-test-app__restart-button:hover {
+    background-color: var(--clr-neutral-500);
+}
+
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+/* Added: mobile layout kontrolü */
+@media (max-width: 600px) {
+
+    .header__results {
+        gap: 1rem;
+    }
+
+    .header__result-label {
+        padding-inline: 0.5rem;
+        font-size: 1.4rem;
+    }
+
+    .header__result-value {
+        font-size: 1.6rem;
+    }
+
+    .typing-text {
+        font-size: 2rem;
+    }
+
+    .typing-test-app__container {
+        min-height: 60vh;
+    }
+}

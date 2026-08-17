@@ -1,57 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Typing Speed Test</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <title>Frontend Mentor | Typing Speed Test</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
+
 <body>
 
-  Personal best: <!-- PB --> WPM
+    <main class="main">
 
-  WPM: <!-- WPM -->
-  Accuracy: <!-- Accuracy -->
-  Time: <!-- Time -->
+        <header class="header">
 
-  Difficulty:
-  Easy
-  Medium
-  Hard
+            <div class="header__information">
 
-  Mode:
-  Timed (60s)
-  Passage
+                <div class="header__logo">
+                    <!-- Changed: wrapper ve img için aynı class kullanılmıyor -->
+                    <img
+                        src="assets/images/logo-small.svg"
+                        alt="Typing Speed Test"
+                        class="header__logo-image"
+                    >
+                </div>
 
-  <!-- Passage -->
+                <div class="header__personal-best">
+                    <img
+                        src="assets/images/icon-personal-best.svg"
+                        alt=""
+                        class="header__personal-best-icon"
+                    >
 
-  Start Typing Test
-  Or click the text and start typing
+                    <p class="header__personal-best-text">
+                        Best:
+                        <span id="WPM-value" class="header__personal-best-value">
+                            00 WPM
+                        </span>
+                    </p>
+                </div>
 
-  <!-- Test Complete Start -->
+            </div>
 
-  Test Complete!
-  Solid run. Keep pushing to beat your high score.
 
-  WPM: <!-- WPM -->
-  Accuracy: <!-- Accuracy -->
-  Characters: <!-- Correct/Incorrect -->
+            <div class="header__interactive">
 
-  Go Again
-  
-  <!-- Test Complete End -->
+                <!-- Result information -->
+                <div class="header__results">
 
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+                    <div class="header__result">
+                        <h2 class="header__result-label">WPM:</h2>
+                        <span class="header__result-value header__result-value--wpm">
+                            0
+                        </span>
+                    </div>
+
+                    <div class="header__result">
+                        <h2 class="header__result-label">Accuracy:</h2>
+                        <span class="header__result-value header__result-value--accuracy">
+                            100%
+                        </span>
+                    </div>
+
+                    <div class="header__result">
+                        <h2 class="header__result-label">Time:</h2>
+                        <span class="header__result-value header__result-value--time">
+                            60
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- Test options -->
+                <div class="header__options">
+
+                    <ul class="header__options-list">
+
+                        <li class="header__options-item">
+
+                            <button
+                                type="button"
+                                class="header__options-button"
+                            >
+                                Easy
+                                <i class="fa-solid fa-angle-down"></i>
+                            </button>
+
+                            <div class="header__dropdown">
+
+                                <ul class="header__dropdown-list">
+
+                                    <li class="header__dropdown-item">
+                                        <button
+                                            type="button"
+                                            class="header__dropdown-button"
+                                        >
+                                            Medium
+                                        </button>
+                                    </li>
+
+                                    <li class="header__dropdown-item">
+                                        <button
+                                            type="button"
+                                            class="header__dropdown-button"
+                                        >
+                                            Hard
+                                        </button>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+
+                        <li class="header__options-item">
+
+                            <button
+                                type="button"
+                                class="header__options-button"
+                            >
+                                Timed (60s)
+                                <i class="fa-solid fa-angle-down"></i>
+                            </button>
+
+                            <div class="header__dropdown">
+
+                                <ul class="header__dropdown-list">
+
+                                    <li class="header__dropdown-item">
+                                        <button
+                                            type="button"
+                                            class="header__dropdown-button"
+                                        >
+                                            Passage
+                                        </button>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="typing-test-app">
+
+            <div class="typing-test-app__container">
+
+                <!-- Changed: h1 yerine dinamik text için normal container -->
+                <div
+                    id="typing-text"
+                    class="typing-text"
+                    aria-live="polite"
+                ></div>
+
+            </div>
+
+
+            <div class="typing-test-app__restart">
+
+                <!-- Changed: button içine <a> koymak yerine yalnızca button kullanılıyor -->
+                <button
+                    type="button"
+                    class="typing-test-app__restart-button"
+                >
+                    Restart test
+                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
+
 </html>
